@@ -62,12 +62,9 @@ class _LoginWebViewState extends State<LoginWebView> {
           if (state.url != null &&
               state.url.startsWith("gsygithubapp://authed")) {
             var code = Uri.parse(state.url).queryParameters["code"];
-            //这里得到返回结果?  code 6965544c689ada8fbf1c
-            print("code ${code}");
             flutterWebViewPlugin.reloadUrl("about:blank");
-
-            //这一句弹出?
             Navigator.of(context).pop(code);
+
           }
         }
       }

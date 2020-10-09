@@ -32,13 +32,16 @@ class HomeScreenState extends State<HomeScreen> {
                   gravity: ToastGravity.CENTER,
                   toastLength: Toast.LENGTH_LONG);
 
-              Navigator.of(context).push(
-                  CupertinoPageRoute( builder: (context) => MediaQuery(
-                    ///不受系统字体缩放影响
-                      data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
-                      child: new LoginWebView( "https://github.com/login/oauth/authorize?client_id"
-                          "=8b01061bcf2f034e5672&state=app&"
-                          "redirect_uri=gsygithubapp://authed", "登录"))));
+
+              oauthLogin();
+
+              // Navigator.of(context).push(
+              //     CupertinoPageRoute( builder: (context) => MediaQuery(
+              //       ///不受系统字体缩放影响
+              //         data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
+              //         child: new LoginWebView( "https://github.com/login/oauth/authorize?client_id"
+              //             "=8b01061bcf2f034e5672&state=app&"
+              //             "redirect_uri=gsygithubapp://authed", "登录"))));
             },
           )
 
@@ -47,5 +50,20 @@ class HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  oauthLogin() async {
+    String code = await Navigator.push(
+        context,
+        CupertinoPageRoute( builder: (context) => MediaQuery(
+          ///不受系统字体缩放影响
+            data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
+            child: new LoginWebView( "https://github.com/login/oauth/authorize?client_id"
+                "=8b01061bcf2f034e5672&state=app&"
+                "redirect_uri=gsygithubapp://authed", "登录"))));
+    print("login:" + code);
+    if (code != null && code.length > 0) {
+      ///通过 redux 去执行登陆流程
+      //StoreProvider.of<GSYState>(context).dispatch(OAuthAction(context, code));
+    }
+  }
 }
 

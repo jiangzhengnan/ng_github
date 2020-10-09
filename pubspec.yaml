@@ -38,10 +38,17 @@ dependencies:
   flutter_spinkit: ^4.1.2+1
   # toast
   fluttertoast: ^7.0.2
+  # json
+  flutter_json_widget: 1.0.2
+  json_annotation: 3.0.1
+
 
 
 
 dev_dependencies:
+  # json
+  json_serializable: 3.2.0
+
   flutter_test:
     sdk: flutter
 
