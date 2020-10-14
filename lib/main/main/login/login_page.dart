@@ -3,14 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:ng_github/main/utils/navigator_utils.dart';
 
-import 'login/login_webview.dart';
+import 'login_webview.dart';
 
-class HomeScreen extends StatefulWidget {
+
+class LoginPage extends StatefulWidget {
+  static final String sName = "login";
+
   @override
-  State<StatefulWidget> createState() => HomeScreenState();
+  State<StatefulWidget> createState() => _LoginPageState();
 }
 
-class HomeScreenState extends State<HomeScreen> {
+class _LoginPageState extends State<LoginPage> {
 
 
   @override

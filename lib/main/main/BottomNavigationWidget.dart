@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ng_github/main/EmailScreen.dart';
-import 'package:ng_github/main/HomeScreen.dart';
+import 'package:ng_github/main/main/login/login_page.dart';
 
 //底部导航栏组件
 class BottomNavigationWidget extends StatefulWidget {
@@ -16,7 +16,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   @override
   void initState() {
     super.initState();
-    pages.add(HomeScreen());
+    pages.add(LoginPage());
     pages.add(EmailScreen());
 
   }
