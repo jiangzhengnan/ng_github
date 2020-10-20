@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:ng_github/main/EmailScreen.dart';
+import 'package:ng_github/main/main/user/user_page.dart';
 import 'package:ng_github/main/main/login/login_page.dart';
 
 //底部导航栏组件
-class BottomNavigationWidget extends StatefulWidget {
+class HomePage extends StatefulWidget {
+  static final String sName = "/";
+
   @override
-  State<StatefulWidget> createState() => BottomNavigationWidgetState();
+  State<StatefulWidget> createState() => _HomePageState();
 }
 
-class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
+class _HomePageState extends State<HomePage> {
   final mBottomNavigationColor = Colors.blue;
   int currentIndex = 0;
   List<Widget> pages = List<Widget>();
@@ -17,7 +19,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   void initState() {
     super.initState();
     pages.add(LoginPage());
-    pages.add(EmailScreen());
+    pages.add(UserPage());
 
   }
 

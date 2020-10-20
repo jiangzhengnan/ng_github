@@ -44,7 +44,7 @@ class UserDao {
 
       resultData = await getUserInfo(null);
       if (Config.DEBUG ) {
-        print("user result " + resultData.result.toString());
+        print("登陆用户结果user result " + resultData.result.toString());
         print(resultData.data);
         print(res.data.toString());
       }
@@ -82,7 +82,7 @@ class UserDao {
       await LocalStorage.save(Config.PW_KEY, password);
       var resultData = await getUserInfo(null);
       if (Config.DEBUG) {
-        print("user result " + resultData.result.toString());
+        print("user result " + resultData.data.toString());
         print(resultData.data);
         print(res.data.toString());
       }
@@ -134,6 +134,7 @@ class UserDao {
           }
         }
         User user = User.fromJson(res.data);
+        print("完整用户信息:" + user.toString());
         user.starred = starred;
         if (userName == null) {
           LocalStorage.save(Config.USER_INFO, json.encode(user.toJson()));

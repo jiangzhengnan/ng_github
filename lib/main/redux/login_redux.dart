@@ -21,7 +21,7 @@ final LoginReducer = combineReducers<bool>([
 
 bool _loginResult(bool result, LoginSuccessAction action) {
   if (action.success == true) {
-    NavigatorUtils.goHome(action.context);
+    ///NavigatorUtils.goHome(action.context);
   }
   return action.success;
 }
@@ -75,7 +75,7 @@ class LoginMiddleware implements MiddlewareClass<NGState> {
 Stream<dynamic> loginEpic(Stream<dynamic> actions, EpicStore<NGState> store) {
   Stream<dynamic> _loginIn(
       LoginAction action, EpicStore<NGState> store) async* {
-    CommonUtils.showLoadingDialog(action.context);
+    //CommonUtils.showLoadingDialog(action.context);
     var res = await UserDao.login(
         action.username.trim(), action.password.trim(), store);
     Navigator.pop(action.context);
@@ -89,7 +89,7 @@ Stream<dynamic> loginEpic(Stream<dynamic> actions, EpicStore<NGState> store) {
 Stream<dynamic> oauthEpic(Stream<dynamic> actions, EpicStore<NGState> store) {
   Stream<dynamic> _loginIn(
       OAuthAction action, EpicStore<NGState> store) async* {
-    CommonUtils.showLoadingDialog(action.context);
+    //CommonUtils.showLoadingDialog(action.context);
     var res = await UserDao.oauth(action.code, store);
     Navigator.pop(action.context);
     yield LoginSuccessAction(action.context, (res != null && res.result));

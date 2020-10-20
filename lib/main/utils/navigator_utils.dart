@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ng_github/main/main/HomePage.dart';
 import 'package:ng_github/main/main/login/login_page.dart';
 import 'package:ng_github/main/main/login/login_webview.dart';
 
@@ -34,7 +35,7 @@ class NavigatorUtils {
 
   ///主页
   static goHome(BuildContext context) {
-    //Navigator.pushReplacementNamed(context, HomePage.sName);
+     Navigator.pushReplacementNamed(context, HomePage.sName);
   }
 
   ///登录页
