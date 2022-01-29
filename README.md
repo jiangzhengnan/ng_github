@@ -1,5 +1,7 @@
 # ng_github
-
+![dart](https://img.shields.io/badge/language-dart-red.svg)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=jiangzhengnan.nggithub.read.me)
+<br/>
 A new Flutter application.
 
 ## Getting Started
